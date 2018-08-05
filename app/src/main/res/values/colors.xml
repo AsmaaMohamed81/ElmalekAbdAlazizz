@@ -12,5 +12,7 @@
     <color name="gray3">#E0E0E0</color>
     <color name="gray4">#BDBDBD</color>
     <color name="gray5">#9E9E9E</color>
+    <color name="cpLight">#c9ecf7</color>
+    <color name="cp_dark">#1c7997</color>
 
 </resources>

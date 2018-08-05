@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/gray2"
+
+    >
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:background="@color/colorPrimary"
+       >
+       
+   </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:fillViewport="true"
+        android:layout_marginTop="-50dp"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dp"
+                    >
+                    <com.github.siyamed.shapeimageview.RoundedImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/news"
+                        android:scaleType="centerCrop"
+                        app:siBorderColor="@color/white"
+                        app:siBorderWidth="3dp"
+                        app:siRadius="5dp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="البيانات المالية"
+                        android:gravity="center"
+
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_alignParentLeft="true"
+
+                    >
+
+                    <com.github.siyamed.shapeimageview.RoundedImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/news"
+                        app:siBorderColor="@color/white"
+                        app:siBorderWidth="3dp"
+                        app:siRadius="5dp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="البيانات الأساسية"
+                        android:gravity="center"
+
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dp"
+                    >
+                    <com.github.siyamed.shapeimageview.RoundedImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/news"
+                        android:scaleType="centerCrop"
+                        app:siBorderColor="@color/white"
+                        app:siBorderWidth="3dp"
+                        app:siRadius="5dp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="الكفالات"
+                        android:gravity="center"
+
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_alignParentLeft="true"
+
+                    >
+
+                    <com.github.siyamed.shapeimageview.RoundedImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/news"
+                        app:siBorderColor="@color/white"
+                        app:siBorderWidth="3dp"
+                        app:siRadius="5dp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="الخدمات"
+                        android:gravity="center"
+
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

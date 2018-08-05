@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,7 @@ import com.alatheer.charities.Adapters.DiscreteAdapter;
 import com.alatheer.charities.Adapters.SliderAdapter;
 import com.alatheer.charities.Fragments.Fragment_AboutUs;
 import com.alatheer.charities.Fragments.Fragment_ContactUs;
+import com.alatheer.charities.Fragments.Fragment_Login;
 import com.alatheer.charities.Fragments.Fragment_News;
 import com.alatheer.charities.Fragments.Fragment_Notification;
 import com.alatheer.charities.Fragments.Fragment_Profile;
@@ -30,9 +32,11 @@ import com.alatheer.charities.Fragments.Fragment_Programs;
 import com.alatheer.charities.Models.DiscreteModel;
 import com.alatheer.charities.Models.SliderModel;
 import com.alatheer.charities.R;
+import com.alatheer.charities.Services.Tags;
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment;
 import com.yalantis.contextmenu.lib.MenuObject;
 import com.yalantis.contextmenu.lib.MenuParams;
+import com.yalantis.contextmenu.lib.interfaces.OnMenuItemClickListener;
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
 import com.yarolegovich.discretescrollview.transform.Pivot;
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
@@ -44,7 +48,7 @@ import java.util.TimerTask;
 
 import q.rorbin.badgeview.QBadgeView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements OnMenuItemClickListener{
     private ContextMenuDialogFragment contextMenuDialogFragment;
     private TabLayout tab;
     private ViewPager pager;
@@ -64,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     private Fragment_ContactUs fragment_contactUs;
     private Fragment_News fragment_news;
     private Fragment_Programs fragment_programs;
+    private Fragment_Login fragment_login;
     //////////////////////////////////////////
     private ImageView image_back;
     private TextView tv_title;
@@ -147,8 +152,8 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.profile:
                         behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                         fragment_profile = Fragment_Profile.getInstance();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_profile).commit();
-                        tv_title.setText("Profile");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_profile).commit();
+                        tv_title.setText(R.string.profile);
                         behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
                         break;
@@ -157,7 +162,7 @@ public class HomeActivity extends AppCompatActivity {
                         behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                         fragment_notification = Fragment_Notification.getInstance();
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_notification).commit();
-                        tv_title.setText("Notifications");
+                        tv_title.setText(R.string.notifications);
                         behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
                         break;
@@ -181,17 +186,43 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         /////////////////////////////////////////////////////////
-        MenuObject close = new MenuObject("إغلاق    ");
+        MenuObject close = new MenuObject(getString(R.string.close)+"    ");
         close.setResource(R.drawable.close_icon);
-        MenuObject mostfeed = new MenuObject("المستفيدين    ");
-        MenuObject motbare = new MenuObject("المتبرعين    ");
-        MenuObject motatawe = new MenuObject("المتطوعين    ");
-        MenuObject kafeel = new MenuObject("الكفيل    ");
-        MenuObject mowazuf = new MenuObject("الموظفين    ");
-        MenuObject edarah = new MenuObject("الادارة    ");
+        close.setBgResource(R.color.gray2);
 
-        MenuObject logout = new MenuObject("خروج    ");
-        logout.setResource(R.drawable.logut);
+        MenuObject mostfeed = new MenuObject(getString(R.string.family)+"    ");
+        mostfeed.setResource(R.drawable.mostafeed);
+        mostfeed.setBgResource(R.color.colorPrimary);
+        mostfeed.setDividerColor(R.color.white);
+
+        MenuObject motbare = new MenuObject(getString(R.string.donors)+"    ");
+        motbare.setResource(R.drawable.motabare);
+        motbare.setBgResource(R.color.colorPrimary);
+        motbare.setDividerColor(R.color.white);
+
+        MenuObject motatawe = new MenuObject(getString(R.string.volunteers)+"    ");
+        motatawe.setResource(R.drawable.motatawe);
+        motatawe.setBgResource(R.color.colorPrimary);
+        motatawe.setDividerColor(R.color.white);
+
+        MenuObject kafeel = new MenuObject(getString(R.string.guarantor)+"    ");
+        kafeel.setResource(R.drawable.kafeel);
+        kafeel.setBgResource(R.color.colorPrimary);
+        kafeel.setDividerColor(R.color.white);
+
+        MenuObject mowazuf = new MenuObject(getString(R.string.employees)+"    ");
+        mowazuf.setResource(R.drawable.mwazuf);
+        mowazuf.setBgResource(R.color.colorPrimary);
+        mowazuf.setDividerColor(R.color.white);
+
+        MenuObject edarah = new MenuObject(getString(R.string.administration)+"    ");
+        edarah.setResource(R.drawable.edara);
+        edarah.setBgResource(R.color.colorPrimary);
+        edarah.setDividerColor(R.color.white);
+
+        MenuObject logout = new MenuObject(getString(R.string.logout)+"    ");
+        logout.setResource(R.drawable.logout);
+        logout.setBgResource(R.color.colorPrimary);
 
         List<MenuObject> menuObjects = new ArrayList<>();
         menuObjects.add(close);
@@ -209,6 +240,7 @@ public class HomeActivity extends AppCompatActivity {
         menuParams.setMenuObjects(menuObjects);
         menuParams.setClosableOutside(true);
         contextMenuDialogFragment = ContextMenuDialogFragment.newInstance(menuParams);
+        contextMenuDialogFragment.setItemClickListener(this);
         /////////////////////////////////////////////////////////
 
         discreteScrollView.addOnItemChangedListener(new DiscreteScrollView.OnItemChangedListener<RecyclerView.ViewHolder>() {
@@ -343,6 +375,57 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onMenuItemClick(View view, int position) {
+        switch (position)
+        {
+            case 0:
+                contextMenuDialogFragment.dismiss();
+                break;
+            case 1:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                fragment_login = Fragment_Login.getInstance(Tags.mostafeed);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
+                break;
+            case 2:
+                fragment_login = Fragment_Login.getInstance(Tags.motbare);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            case 3:
+                fragment_login = Fragment_Login.getInstance(Tags.motatawe);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            case 4:
+                fragment_login = Fragment_Login.getInstance(Tags.kafeel);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            case 5:
+                fragment_login = Fragment_Login.getInstance(Tags.mwazuf);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            case 6:
+                fragment_login = Fragment_Login.getInstance(Tags.edarah);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            case 7:
+                break;
+        }
+
+    }
 
 
     private class timerTask extends TimerTask{

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">جمعية الجبيل</string>
+    <string name="home">الرئيسي ة</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="profile">حسابي</string>
+    <string name="username">إسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="forget_password">نسيت كلمة المرور ؟</string>
+    <string name="login">دخول</string>
+    <string name="sign_up_now">إنشاء حساب جديد</string>
+    <string name="close">إغلاق</string>
+    <string name="family">المستفيدين</string>
+    <string name="donors">المتبرعين</string>
+    <string name="volunteers">المتطوعين</string>
+    <string name="guarantor">الكفيل</string>
+    <string name="employees">الموظفين</string>
+    <string name="administration">الادارة</string>
+    <string name="logout">خروج</string>
+
+</resources>

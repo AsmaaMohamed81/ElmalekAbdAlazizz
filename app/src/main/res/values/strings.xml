@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Charities</string>
+    <string name="app_name">Al_jubail</string>
+    <string name="home">Home</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="login">Login</string>
+    <string name="sign_up_now">Sign Up Now</string>
+    <string name="close">Close</string>
+    <string name="family">Families</string>
+    <string name="donors">Donors</string>
+    <string name="volunteers">Volunteers</string>
+    <string name="guarantor">Guarantor</string>
+    <string name="employees">Employees</string>
+    <string name="administration">Administration</string>
+    <string name="logout">Logout</string>
 </resources>
