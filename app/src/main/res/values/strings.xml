@@ -5,8 +5,10 @@
     <string name="profile">Profile</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="forget_password">Forget Password ?</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
     <string name="sign_up_now">Sign Up Now</string>
     <string name="close">Close</string>
     <string name="family">Families</string>
@@ -16,4 +18,13 @@
     <string name="employees">Employees</string>
     <string name="administration">Administration</string>
     <string name="logout">Logout</string>
+    <string name="ID_Mother">ID Mother</string>
+
+    <string name="phone">Phone Number</string>
+    <string name="place_sign">Place Sign</string>
+
+
+
+
+
 </resources>

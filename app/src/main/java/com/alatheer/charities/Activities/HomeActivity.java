@@ -29,6 +29,7 @@ import com.alatheer.charities.Fragments.Fragment_News;
 import com.alatheer.charities.Fragments.Fragment_Notification;
 import com.alatheer.charities.Fragments.Fragment_Profile;
 import com.alatheer.charities.Fragments.Fragment_Programs;
+import com.alatheer.charities.Fragments.Fragment_Register_family;
 import com.alatheer.charities.Models.DiscreteModel;
 import com.alatheer.charities.Models.SliderModel;
 import com.alatheer.charities.R;
@@ -69,6 +70,8 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     private Fragment_News fragment_news;
     private Fragment_Programs fragment_programs;
     private Fragment_Login fragment_login;
+    private Fragment_Register_family fragment_register_family;
+
     //////////////////////////////////////////
     private ImageView image_back;
     private TextView tv_title;
@@ -392,9 +395,9 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
 
                 break;
             case 2:
-                fragment_login = Fragment_Login.getInstance(Tags.motbare);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
-                tv_title.setText(R.string.login);
+                fragment_register_family = Fragment_Register_family.getInstance(Tags.motbare);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_register_family).commit();
+                tv_title.setText(R.string.register);
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 3:
