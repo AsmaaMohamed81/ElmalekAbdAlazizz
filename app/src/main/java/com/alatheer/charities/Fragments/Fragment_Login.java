@@ -1,6 +1,7 @@
 package com.alatheer.charities.Fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import com.alatheer.charities.R;
 import com.alatheer.charities.Services.Tags;
 
+import net.cachapa.expandablelayout.ExpandableLayout;
+
 import java.util.Locale;
 
 /**
@@ -25,11 +28,8 @@ import java.util.Locale;
 public class Fragment_Login extends Fragment {
     private static String TAG="USER_TYPE";
     private EditText edt_userName,edt_password;
-    private TextView txt_sign;
     private String user_type ="";
-
-    private BottomSheetBehavior behavior;
-   // private Fragment_Register_family fragment_register_family;
+    private ExpandableLayout expand_layout;
 
 
 
@@ -51,8 +51,13 @@ public class Fragment_Login extends Fragment {
         }
         edt_userName = view.findViewById(R.id.edt_userName);
         edt_password = view.findViewById(R.id.edt_password);
-        txt_sign=view.findViewById(R.id.txt_sign);
-
+        expand_layout = view.findViewById(R.id.expand_layout);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                expand_layout.expand(true);
+            }
+        },500);
 
         if (Locale.getDefault().getLanguage().equals("ar"))
         {
@@ -64,14 +69,6 @@ public class Fragment_Login extends Fragment {
                 edt_password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.pass_icon,0,0,0);
             }
 
-
-
-//        txt_sign.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
     }
 
     public static Fragment_Login getInstance(String userType)

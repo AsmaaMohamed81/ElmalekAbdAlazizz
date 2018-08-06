@@ -14,7 +14,7 @@ import com.alatheer.charities.R;
  * Created by elashry on 01/08/2018.
  */
 
-public class Fragment_Profile extends Fragment {
+public class Fragment_Family_Profile extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,9 +22,9 @@ public class Fragment_Profile extends Fragment {
         return view;
     }
 
-    public static Fragment_Profile getInstance()
+    public static Fragment_Family_Profile getInstance()
     {
-        Fragment_Profile fragment = new Fragment_Profile();
+        Fragment_Family_Profile fragment = new Fragment_Family_Profile();
         return fragment;
     }
 }

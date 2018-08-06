@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +26,7 @@ import com.alatheer.charities.Fragments.Fragment_ContactUs;
 import com.alatheer.charities.Fragments.Fragment_Login;
 import com.alatheer.charities.Fragments.Fragment_News;
 import com.alatheer.charities.Fragments.Fragment_Notification;
-import com.alatheer.charities.Fragments.Fragment_Profile;
+import com.alatheer.charities.Fragments.Fragment_Family_Profile;
 import com.alatheer.charities.Fragments.Fragment_Programs;
 import com.alatheer.charities.Fragments.Fragment_Register_family;
 import com.alatheer.charities.Models.DiscreteModel;
@@ -63,7 +62,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     private View view;
     private BottomSheetBehavior behavior;
     //////////////////////////////////////////
-    private Fragment_Profile fragment_profile;
+    private Fragment_Family_Profile fragment_profile;
     private Fragment_Notification fragment_notification;
     private Fragment_AboutUs fragment_aboutUs;
     private Fragment_ContactUs fragment_contactUs;
@@ -154,7 +153,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
                 {
                     case R.id.profile:
                         behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                        fragment_profile = Fragment_Profile.getInstance();
+                        fragment_profile = Fragment_Family_Profile.getInstance();
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_profile).commit();
                         tv_title.setText(R.string.profile);
                         behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -395,10 +394,14 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
 
                 break;
             case 2:
-                fragment_register_family = Fragment_Register_family.getInstance(Tags.motbare);
+                fragment_login = Fragment_Login.getInstance(Tags.motbare);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                tv_title.setText(R.string.login);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+               /* fragment_register_family = Fragment_Register_family.getInstance(Tags.motbare);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_register_family).commit();
                 tv_title.setText(R.string.register);
-                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);*/
                 break;
             case 3:
                 fragment_login = Fragment_Login.getInstance(Tags.motatawe);

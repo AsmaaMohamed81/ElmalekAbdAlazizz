@@ -7,11 +7,13 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
     >
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        android:id="@+id/ll"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
 
         tools:context="com.alatheer.charities.Activities.HomeActivity">
@@ -47,42 +49,54 @@
             >
 
         </android.support.design.widget.TabLayout>
-        <com.yarolegovich.discretescrollview.DiscreteScrollView
-            android:id="@+id/recView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            >
-
-        </com.yarolegovich.discretescrollview.DiscreteScrollView>
+    </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
+            android:layout_above="@+id/view"
+            android:layout_below="@+id/ll"
             >
-            <ImageView
-                android:id="@+id/img_back"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/next_back_btn_bg"
-                android:src="@drawable/back_icon"
-                android:layout_alignParentLeft="true"
-                android:visibility="invisible"
+            <com.yarolegovich.discretescrollview.DiscreteScrollView
+                android:id="@+id/recView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                >
 
-                />
-            <ImageView
-                android:id="@+id/img_next"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/next_back_btn_bg"
-                android:src="@drawable/next_icon"
-                android:layout_alignParentRight="true"
-                android:visibility="invisible"
-                />
+            </com.yarolegovich.discretescrollview.DiscreteScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_below="@+id/recView"
+                >
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/next_back_btn_bg"
+                    android:src="@drawable/back_icon"
+                    android:layout_alignParentLeft="true"
+                    android:visibility="invisible"
+
+                    />
+                <ImageView
+                    android:id="@+id/img_next"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/next_back_btn_bg"
+                    android:src="@drawable/next_icon"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    />
+            </RelativeLayout>
         </RelativeLayout>
-    </LinearLayout>
+
+
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:background="@color/gray3"

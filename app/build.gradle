@@ -46,6 +46,7 @@ dependencies {
         transitive = true
     }
     implementation 'com.wrapp.floatlabelededittext:library:0.0.6'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 
 
 }
