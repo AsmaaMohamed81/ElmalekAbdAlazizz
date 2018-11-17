@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     private Fragment_Programs fragment_programs;
     private Fragment_Login fragment_login;
     private Fragment_Register_family fragment_register_family;
-
+    private String last_selceted_fragment;
     //////////////////////////////////////////
     private ImageView image_back;
     private TextView tv_title;
@@ -386,7 +386,6 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
                 break;
             case 1:
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-
                 fragment_login = Fragment_Login.getInstance(Tags.mostafeed);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
                 tv_title.setText(R.string.login);
@@ -394,6 +393,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
 
                 break;
             case 2:
+
                 fragment_login = Fragment_Login.getInstance(Tags.motbare);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
                 tv_title.setText(R.string.login);
@@ -404,24 +404,28 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);*/
                 break;
             case 3:
+
                 fragment_login = Fragment_Login.getInstance(Tags.motatawe);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
                 tv_title.setText(R.string.login);
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 4:
+
                 fragment_login = Fragment_Login.getInstance(Tags.kafeel);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
                 tv_title.setText(R.string.login);
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 5:
+
                 fragment_login = Fragment_Login.getInstance(Tags.mwazuf);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
                 tv_title.setText(R.string.login);
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 6:
+
                 fragment_login = Fragment_Login.getInstance(Tags.edarah);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
                 tv_title.setText(R.string.login);
@@ -433,7 +437,134 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
 
     }
 
+    public void ManageFragments(String register_type,String current_fragment)
+    {
+        last_selceted_fragment = current_fragment;
+        switch (register_type)
+        {
+            case Tags.mostafeed:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        fragment_register_family = Fragment_Register_family.getInstance();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_register_family).commit();
+                        tv_title.setText("Register");
+                        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    }
+                },700);
 
+                break;
+            case Tags.motbare:
+                break;
+            case Tags.motatawe:
+                break;
+            case Tags.kafeel:
+                break;
+            case Tags.mwazuf:
+                break;
+            case Tags.edarah:
+                break;
+
+        }
+    }
+
+    public void Back_To_Previous_Fragment()
+    {
+        switch (last_selceted_fragment)
+        {
+            case Tags.mostafeed:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                new Handler()
+                        .postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fragment_login = Fragment_Login.getInstance(Tags.mostafeed);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                                tv_title.setText(R.string.login);
+                                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                            }
+                        },700);
+
+                break;
+            case Tags.motbare:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                new Handler()
+                        .postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fragment_login = Fragment_Login.getInstance(Tags.motbare);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                                tv_title.setText(R.string.login);
+                                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                            }
+                        },700);
+
+                break;
+            case Tags.motatawe:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                new Handler()
+                        .postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fragment_login = Fragment_Login.getInstance(Tags.motatawe);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                                tv_title.setText(R.string.login);
+                                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                            }
+                        },700);
+
+                break;
+            case Tags.kafeel:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                new Handler()
+                        .postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fragment_login = Fragment_Login.getInstance(Tags.kafeel);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                                tv_title.setText(R.string.login);
+                                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                            }
+                        },700);
+
+                break;
+            case Tags.mwazuf:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                new Handler()
+                        .postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fragment_login = Fragment_Login.getInstance(Tags.mwazuf);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                                tv_title.setText(R.string.login);
+                                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                            }
+                        },700);
+
+                break;
+            case Tags.edarah:
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                new Handler()
+                        .postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fragment_login = Fragment_Login.getInstance(Tags.edarah);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container, fragment_login).commit();
+                                tv_title.setText(R.string.login);
+                                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                            }
+                        },700);
+
+                break;
+
+        }
+    }
     private class timerTask extends TimerTask{
         @Override
         public void run() {

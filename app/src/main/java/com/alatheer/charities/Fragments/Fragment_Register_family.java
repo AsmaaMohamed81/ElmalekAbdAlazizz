@@ -1,6 +1,7 @@
 package com.alatheer.charities.Fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
@@ -10,9 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alatheer.charities.Activities.HomeActivity;
 import com.alatheer.charities.R;
+
+import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.Locale;
 
@@ -24,10 +29,10 @@ public class Fragment_Register_family extends Fragment {
     private static String TAG="USER_TYPE";
     private EditText edt_userName,edt_password,edt_phone,edt_confirm_password,edt_id_mother,edt_place_sign;
     private TextView txt_sign;
-    private String user_type ="";
+    private LinearLayout ll_login;
+    private ExpandableLayout expand_layout;
+    private HomeActivity homeActivity;
 
-    private BottomSheetBehavior behavior;
-   // private Fragment_Register_family fragment_register_family;
 
 
 
@@ -40,13 +45,9 @@ public class Fragment_Register_family extends Fragment {
     }
 
     private void initView(View view) {
-
-        Bundle bundle = getArguments();
-        if (bundle!=null)
-        {
-            user_type = bundle.getString(TAG);
-            Log.e("type",user_type);
-        }
+        homeActivity = (HomeActivity) getActivity();
+        ll_login = view.findViewById(R.id.ll_login);
+        expand_layout = view.findViewById(R.id.expand_layout);
         edt_userName = view.findViewById(R.id.edt_userName);
         edt_password = view.findViewById(R.id.edt_password);
         edt_phone = view.findViewById(R.id.edt_phone);
@@ -54,9 +55,12 @@ public class Fragment_Register_family extends Fragment {
         edt_confirm_password=view.findViewById(R.id.edt_confirm_password);
         edt_place_sign=view.findViewById(R.id.edt_place_sign);
 
-        txt_sign=view.findViewById(R.id.txt_sign);
-
-
+        ll_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeActivity.Back_To_Previous_Fragment();
+            }
+        });
         if (Locale.getDefault().getLanguage().equals("ar"))
         {
             edt_id_mother.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.edit_icon,0);
@@ -65,7 +69,6 @@ public class Fragment_Register_family extends Fragment {
             edt_confirm_password.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.lock_icon,0);
             edt_phone.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.phone_icon,0);
             edt_place_sign.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.location_icon,0);
-
 
         }else
             {
@@ -81,23 +84,19 @@ public class Fragment_Register_family extends Fragment {
 
             }
 
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    expand_layout.expand(true);
+                }
+            },500);
 
 
-
-//        txt_sign.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
     }
 
-    public static Fragment_Register_family getInstance(String userType)
+    public static Fragment_Register_family getInstance()
     {
         Fragment_Register_family fragment = new Fragment_Register_family();
-        Bundle bundle = new Bundle();
-        bundle.putString(TAG,userType);
-        fragment.setArguments(bundle);
         return fragment;
     }
 }

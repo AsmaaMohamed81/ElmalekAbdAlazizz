@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.alatheer.charities.Activities.HomeActivity;
 import com.alatheer.charities.R;
 import com.alatheer.charities.Services.Tags;
 
@@ -29,7 +30,9 @@ public class Fragment_Login extends Fragment {
     private static String TAG="USER_TYPE";
     private EditText edt_userName,edt_password;
     private String user_type ="";
+    private TextView tv_reg;
     private ExpandableLayout expand_layout;
+    private HomeActivity homeActivity;
 
 
 
@@ -42,7 +45,7 @@ public class Fragment_Login extends Fragment {
     }
 
     private void initView(View view) {
-
+        homeActivity = (HomeActivity) getActivity();
         Bundle bundle = getArguments();
         if (bundle!=null)
         {
@@ -52,6 +55,7 @@ public class Fragment_Login extends Fragment {
         edt_userName = view.findViewById(R.id.edt_userName);
         edt_password = view.findViewById(R.id.edt_password);
         expand_layout = view.findViewById(R.id.expand_layout);
+        tv_reg = view.findViewById(R.id.tv_reg);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -69,7 +73,31 @@ public class Fragment_Login extends Fragment {
                 edt_password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.pass_icon,0,0,0);
             }
 
+            tv_reg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch (user_type)
+                    {
+                        case Tags.mostafeed:
+                            homeActivity.ManageFragments(Tags.mostafeed,Tags.mostafeed);
+                            break;
+                        case Tags.motbare:
+                            break;
+                        case Tags.motatawe:
+                            break;
+                        case Tags.kafeel:
+                            break;
+                        case Tags.mwazuf:
+                            break;
+                        case Tags.edarah:
+                            break;
+
+                    }
+                }
+            });
+
     }
+
 
     public static Fragment_Login getInstance(String userType)
     {

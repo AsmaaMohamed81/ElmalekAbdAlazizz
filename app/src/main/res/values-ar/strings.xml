@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">جمعية الجبيل</string>
-    <string name="home">الرئيسي ة</string>
+    <string name="home">الرئيسية</string>
     <string name="notifications">الإشعارات</string>
     <string name="profile">حسابي</string>
     <string name="username">إسم المستخدم</string>
@@ -15,12 +15,11 @@
     <string name="family">المستفيدين</string>
     <string name="donors">المتبرعين</string>
     <string name="volunteers">المتطوعين</string>
-    <string name="guarantor">الكفيل</string>
+    <string name="guarantor">الكفلاء</string>
     <string name="employees">الموظفين</string>
-    <string name="administration">الادارة</string>
+    <string name="administration">مجلس الادارة</string>
     <string name="logout">خروج</string>
     <string name="ID_Mother">رقم السجل المدني للأم</string>
-
     <string name="phone">رقم الجوال</string>
     <string name="place_sign">مقر التسجيل</string>
 

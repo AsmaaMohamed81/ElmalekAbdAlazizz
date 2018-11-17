@@ -22,9 +22,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             >
-          <!--  <net.cachapa.expandablelayout.ExpandableLayout
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expand_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">-->
+                android:layout_height="wrap_content"
+                app:el_parallax=".5"
+                app:el_expanded="false"
+                app:el_duration="2000"
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -32,17 +37,20 @@
                     >
 
                     <LinearLayout
+                        android:id="@+id/ll_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:layoutDirection="ltr"
+                        android:descendantFocusability="blocksDescendants"
                         >
                         <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/blue_left_arrow"
-                            android:padding="2dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/right_arrow_blue"
+                            android:longClickable="false"
+                            android:clickable="false"
                             />
                         <TextView
                             android:layout_width="wrap_content"
@@ -51,6 +59,8 @@
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="@string/login"
+                            android:longClickable="false"
+                            android:clickable="false"
                             />
                     </LinearLayout>
                     <com.wrapp.floatlabelededittext.FloatLabeledEditText
@@ -232,9 +242,8 @@
 
                 </LinearLayout>
 
-<!--
             </net.cachapa.expandablelayout.ExpandableLayout>
--->
+
         </FrameLayout>
 
     </FrameLayout>
