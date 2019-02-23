@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alatheer.charities">
+    package="com.alatheer.elmalekabdelaziz">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.HomeActivity"
+        <activity android:name="com.alatheer.elmalekabdelaziz.Activities.HomeActivity"
             android:theme="@style/AppTheme"
             android:label="@string/home"
             >
 
         </activity>
-        <activity android:name=".Activities.SplashActivity"
+        <activity android:name="com.alatheer.elmalekabdelaziz.Activities.SplashActivity"
             android:theme="@style/AppTheme"
             >
             <intent-filter>

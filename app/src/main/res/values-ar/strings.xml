@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">جمعية الجبيل</string>
+    <string name="app_name">جمعية الملك عبدالعزيز</string>
     <string name="home">الرئيسية</string>
     <string name="notifications">الإشعارات</string>
     <string name="profile">حسابي</string>
@@ -12,7 +12,7 @@
     <string name="register">تسجيل</string>
     <string name="sign_up_now">إنشاء حساب جديد</string>
     <string name="close">إغلاق</string>
-    <string name="family">المستفيدين</string>
+    <string name="family">الأسـر</string>
     <string name="donors">المتبرعين</string>
     <string name="volunteers">المتطوعين</string>
     <string name="guarantor">الكفلاء</string>
