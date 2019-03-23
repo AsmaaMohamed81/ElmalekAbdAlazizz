@@ -292,9 +292,11 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
 
     private List<DiscreteModel> getDiscreteData() {
         List<DiscreteModel> discreteModels = new ArrayList<>();
-        discreteModels.add(new DiscreteModel(R.drawable.news_icon,"اخبار"));
-        discreteModels.add(new DiscreteModel(R.drawable.prog,"برامج"));
-        discreteModels.add(new DiscreteModel(R.drawable.news,"عن الجمعية"));
+        discreteModels.add(new DiscreteModel(R.drawable.projects,"مشروعتنا"));
+        discreteModels.add(new DiscreteModel(R.drawable.newss,"المركز الاعلامي"));
+        discreteModels.add(new DiscreteModel(R.drawable.odwyaaa,"العضويه"));
+        discreteModels.add(new DiscreteModel(R.drawable.prog,"المتجر"));
+        discreteModels.add(new DiscreteModel(R.drawable.news,"من نحن "));
         discreteModels.add(new DiscreteModel(R.drawable.contact,"اتصل بنا"));
 
         return discreteModels;
