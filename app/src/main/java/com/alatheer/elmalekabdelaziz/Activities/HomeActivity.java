@@ -6,6 +6,7 @@ import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -21,8 +22,10 @@ import android.widget.TextView;
 
 import com.alatheer.elmalekabdelaziz.Adapters.DiscreteAdapter;
 import com.alatheer.elmalekabdelaziz.Adapters.SliderAdapter;
+import com.alatheer.elmalekabdelaziz.Fragments.Fragment_AboutUs_Details;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_AboutUs;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_ContactUs;
+import com.alatheer.elmalekabdelaziz.Fragments.Fragment_ElectronicServices;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Login;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_News;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Notification;
@@ -30,6 +33,7 @@ import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Family_Profile;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Programs;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Register_family;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Register_kafeel;
+import com.alatheer.elmalekabdelaziz.Fragments.Fragment_membership;
 import com.alatheer.elmalekabdelaziz.Models.DiscreteModel;
 import com.alatheer.elmalekabdelaziz.Models.SliderModel;
 import com.alatheer.elmalekabdelaziz.R;
@@ -65,7 +69,10 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     //////////////////////////////////////////
     private Fragment_Family_Profile fragment_profile;
     private Fragment_Notification fragment_notification;
+    private Fragment_ElectronicServices fragment_electronicServices;
     private Fragment_AboutUs fragment_aboutUs;
+    private Fragment_membership fragment_membership;
+    private Fragment_AboutUs_Details fragment_aboutUs_details;
     private Fragment_ContactUs fragment_contactUs;
     private Fragment_News fragment_news;
     private Fragment_Programs fragment_programs;
@@ -331,25 +338,25 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
 
                 break;
             case 1:
-                if (fragment_programs==null)
+                if (fragment_electronicServices==null)
                 {
-                    fragment_programs = Fragment_Programs.getInstance();
+                    fragment_electronicServices = Fragment_ElectronicServices.getInstance();
 
                 }
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_programs).commit();
-                tv_title.setText("Programs");
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_electronicServices).commit();
+                tv_title.setText("Electronic Service");
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 2:
-                if (fragment_aboutUs==null)
+                if (fragment_membership==null)
                 {
-                    fragment_aboutUs = Fragment_AboutUs.getInstance();
+                    fragment_membership = Fragment_membership.getInstance();
 
                 }
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_aboutUs).commit();
-                tv_title.setText("About us");
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_membership).commit();
+                tv_title.setText("membership");
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 3:
@@ -363,7 +370,30 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
                 tv_title.setText("Contact us");
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
+            case 4:
+                if (fragment_aboutUs==null)
+                {
+                    fragment_aboutUs = Fragment_AboutUs.getInstance();
+
+                }
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_aboutUs).commit();
+                tv_title.setText("About us");
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
         }
+    }
+    public void setSelectAboutUsePos(){
+        if (fragment_aboutUs_details==null)
+        {
+            fragment_aboutUs_details = Fragment_AboutUs_Details.getInstance();
+
+        }
+        behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_aboutUs_details).commit();
+        tv_title.setText("About us Details");
+        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
     }
 
     @Override

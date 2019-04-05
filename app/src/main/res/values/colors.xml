@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#95c11f</color>
     <color name="colorAccent">#95c11f</color>
     <color name="colorSecondary">#b0d236</color>
+    <color name="gradientcolor">#d0f178</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
