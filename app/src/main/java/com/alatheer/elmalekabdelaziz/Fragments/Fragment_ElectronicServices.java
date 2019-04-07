@@ -62,6 +62,7 @@ public class Fragment_ElectronicServices extends Fragment {
         electronicServiceDetailsModelList.add(new ElectronicServiceDetailsModel("تسجيل كفيل"));
         return electronicServiceDetailsModelList;
 
+
     }
 
     private List<ElectronicServiceDetailsModel> list_of_electronicserviceDetails_model2() {
