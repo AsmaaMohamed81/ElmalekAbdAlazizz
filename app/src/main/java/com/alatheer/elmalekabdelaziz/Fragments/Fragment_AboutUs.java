@@ -37,7 +37,7 @@ public class Fragment_AboutUs extends Fragment {
 
     private void initview(View view) {
         aboutUsModels=new ArrayList<>();
-        recyclerView=view.findViewById(R.id.about_us_recycler);
+        recyclerView=view.findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

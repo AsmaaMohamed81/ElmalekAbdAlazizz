@@ -31,6 +31,7 @@ import com.alatheer.elmalekabdelaziz.Fragments.Fragment_News;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Notification;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Family_Profile;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Programs;
+import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Projects;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Register_family;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_Register_kafeel;
 import com.alatheer.elmalekabdelaziz.Fragments.Fragment_membership;
@@ -75,6 +76,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     private Fragment_AboutUs_Details fragment_aboutUs_details;
     private Fragment_ContactUs fragment_contactUs;
     private Fragment_News fragment_news;
+    private Fragment_Projects fragment_projects;
     private Fragment_Programs fragment_programs;
     private Fragment_Login fragment_login;
     private Fragment_Register_family fragment_register_family;
@@ -326,14 +328,14 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
         switch (pos)
         {
             case 0:
-                if (fragment_news==null)
+                if (fragment_projects==null)
                 {
-                    fragment_news = Fragment_News.getInstance();
+                    fragment_projects = Fragment_Projects.getInstance();
 
                 }
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_news).commit();
-                tv_title.setText("News");
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_projects).commit();
+                tv_title.setText("Projects");
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
                 break;
@@ -371,6 +373,18 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 break;
             case 4:
+                if (fragment_aboutUs==null)
+                {
+                    fragment_aboutUs = Fragment_AboutUs.getInstance();
+
+                }
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragments_container,fragment_aboutUs).commit();
+                tv_title.setText("About us");
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+
+            case 5:
                 if (fragment_aboutUs==null)
                 {
                     fragment_aboutUs = Fragment_AboutUs.getInstance();
