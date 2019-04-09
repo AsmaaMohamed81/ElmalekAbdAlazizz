@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 
 import com.alatheer.elmalekabdelaziz.R;
 
-/**
- * Created by elashry on 01/08/2018.
- */
+
 
 public class Fragment_News extends Fragment {
     @Nullable

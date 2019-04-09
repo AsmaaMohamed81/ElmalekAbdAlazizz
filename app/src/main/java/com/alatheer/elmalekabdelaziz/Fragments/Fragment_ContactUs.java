@@ -23,9 +23,7 @@ import com.lamudi.phonefield.PhoneInputLayout;
 
 import java.util.List;
 
-/**
- * Created by elashry on 01/08/2018.
- */
+
 
 public class Fragment_ContactUs extends Fragment {
     private EditText edt_name,edt_email,edt_phone,edt_subject,edt_message;

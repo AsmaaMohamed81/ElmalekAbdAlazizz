@@ -20,9 +20,7 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.Locale;
 
-/**
- * Created by elashry on 01/08/2018.
- */
+
 
 public class Fragment_Login extends Fragment {
     private static String TAG="USER_TYPE";

@@ -68,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/item2"
                 android:layout_width="0dp"
@@ -77,6 +78,8 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:text="عدد المستفدين : "/>
+
+
             <TextView
                 android:id="@+id/desc_item2"
                 android:layout_width="0dp"
@@ -87,19 +90,15 @@
                 android:gravity="center"
                 android:text="20 "/>
 
-
-
-
         </LinearLayout>
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/colorPrimary2"
         android:textStyle="bold"
-        android:gravity="center"
         android:text="الأرملة هى من تحمل مهام الأمومة والأبوة معاَ , عليها مسئولية عظيمة تجاه أطفالها و أبنائها تعيش مع دقات الزمن…"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>

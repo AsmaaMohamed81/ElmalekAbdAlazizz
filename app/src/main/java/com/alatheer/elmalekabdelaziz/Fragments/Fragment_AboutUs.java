@@ -18,9 +18,6 @@ import com.alatheer.elmalekabdelaziz.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by elashry on 01/08/2018.
- */
 
 public class Fragment_AboutUs extends Fragment {
     RecyclerView recyclerView;

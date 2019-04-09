@@ -11,9 +11,7 @@ import android.webkit.WebView;
 
 import com.alatheer.elmalekabdelaziz.R;
 
-/**
- * Created by elashry on 01/08/2018.
- */
+
 
 public class Fragment_Register_family extends Fragment {
     private WebView webView;
