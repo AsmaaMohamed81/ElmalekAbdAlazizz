@@ -30,6 +30,12 @@ public class Common {
     }
     public static String getFullPathFromUri(Context context,String m_uri)
     {
+
+
+
+
+
+
         String image_path="";
         Uri uri = Uri.parse(m_uri);
         String [] projection = {MediaStore.Images.Media.DATA};
